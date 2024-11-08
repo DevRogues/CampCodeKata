@@ -1,0 +1,2 @@
+# CampCodeKata
+Sparta Camp CodeKata
