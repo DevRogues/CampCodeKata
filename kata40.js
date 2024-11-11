@@ -12,6 +12,7 @@ function solution(a) {
 
   let num = Number(res).toString();
   let answer = 0;
+
   //10진법 변환
   for (let i = num.length; i > 0; i--) {
     answer += Number(num[i - 1]) * 3 ** (num.length - i);
