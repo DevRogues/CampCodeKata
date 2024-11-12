@@ -11,13 +11,11 @@ function solution(sizes) {
   let sero = 0;
 
   for (let i = 0; i < sizes.length; i++) {
-    if (sizes[i][0] < sizes[i][1]) {
-      sizes[i] = [sizes[i][1], sizes[i][0]];
-    }
-
+    if (sizes[i][0] < sizes[i][1]) sizes[i] = [sizes[i][1], sizes[i][0]];
     if (garo < sizes[i][0]) garo = sizes[i][0];
     if (sero < sizes[i][1]) sero = sizes[i][1];
   }
+
   return garo * sero;
 }
 console.log(solution(sizes));
