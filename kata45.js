@@ -3,9 +3,6 @@ let n = 4;
 
 function solution(s, n) {
   let answer = "";
-  // 122 소
-  // 99 대
-  console.log("z".charCodeAt(), "Z".charCodeAt());
 
   for (let i = 0; i < s.length; i++) {
     if (s[i] === " ") answer += " "; //공백은 공백으로
