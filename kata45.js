@@ -12,7 +12,7 @@ function solution(s, n) {
         s[i].charCodeAt() + n > "Z".charCodeAt() &&
         s[i].charCodeAt() + n < "z".charCodeAt()
       ) {
-        answer += String.fromCharCode(s[i].charCodeAt() - 24 + n);
+        answer += String.fromCharCode(s[i].charCodeAt() + n);
       } else {
         answer += String.fromCharCode(s[i].charCodeAt() + n);
       }
