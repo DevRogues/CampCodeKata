@@ -1,16 +1,15 @@
-let s = [1, 3, 4, 6];
+let s = [5, 0, 2, 7];
 
 function solution(s) {
-  var answer = "0";
-
-  for (let i = s.length - 1; i > 0; i--) {
-    if (s[i] / 2 >= 1) {
-      for (let j = 0; j < Math.floor(s[i] / 2); j++) {
-        answer = i + answer + i;
-      }
+  s = s.sort();
+  var set = new Set();
+  for (let i = 0; i < s.length - 1; i++) {
+    for (let j = i + 1; j < s.length; j++) {
+      set.add(s[i] + s[j]);
     }
   }
-  return answer;
+  var answer = [...set];
+  return answer.sort((a, b) => a - b);
 }
 
 console.log(solution(s));
