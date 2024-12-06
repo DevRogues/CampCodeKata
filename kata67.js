@@ -1,21 +1,24 @@
-function solution(ingredient) {
-  var answer = 0;
+function solution(s, skip, index) {
+  var answer = "";
 
-  //String으로 합침
-  ingredient = String(ingredient.join(""));
+  for (let i = 0; i < s.length; i++) {
+    let idx = index;
+    let aski = s.charCodeAt(i);
 
-  //1231 을 찾아서 잘라서 카운트 함
-  while (true) {
-    let leng = ingredient.length;
-    ingredient = ingredient.replace("1231", "");
-    if (leng === ingredient.length) {
-      break;
-    } else {
-      answer += Math.abs(ingredient.length - leng) / 4;
+    //skip 범위 체크
+    for (let j = 0; j < skip.length; j++) {
+      if (
+        skip[j].charCodeAt(0) > aski &&
+        skip[j].charCodeAt(0) < aski + index
+      ) {
+        idx++;
+      }
     }
+    const str = aski + idx > 122 ? aski + idx - 26 : aski + idx;
+    answer += String.fromCharCode(str);
   }
 
   return answer;
 }
 
-console.log(solution([2, 1, 1, 2, 3, 1, 2, 3, 1]));
+console.log(solution("aukks", "wbqd", 5));
