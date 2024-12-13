@@ -23,11 +23,16 @@ function solution(id_list, report, k) {
     if (cnt[key] >= 2) {
       //res 객체에서 대상자를 찾아서
       for (let key2 in res) {
+        console.log(key2);
+        let a = res[key2].some((item) => item === key);
+        if (a) {
+          break;
+        }
         //answer에 값을 넣을려고 했는데 시간이 다 되어 못풀었습니다.
       }
     }
   }
-
+  console.log(res);
   return answer;
 }
 
