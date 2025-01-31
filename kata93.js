@@ -4,7 +4,6 @@ function solution(k, dungeons) {
   function explore(currentFatigue, visitedCount, visited) {
     // 현재까지 방문한 던전 수와 최대 던전 수 갱신
     answer = Math.max(answer, visitedCount);
-    console.log(answer, visited);
     for (let i = 0; i < dungeons.length; i++) {
       // 아직 방문하지 않은 던전이고 현재 피로도가 최소 필요 피로도 이상일 경우
       if (!visited[i] && currentFatigue >= dungeons[i][0]) {
